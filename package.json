@@ -1,6 +1,6 @@
 {
   "name": "type-check-utility",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple utility for type check.",
   "main": "index.js",
   "scripts": {
@@ -13,5 +13,9 @@
     "javascript"
   ],
   "author": "Rapsy Tree",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapsalands/type-check-utility"
+  }
 }
