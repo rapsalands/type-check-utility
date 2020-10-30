@@ -2,8 +2,8 @@ const consName = (data) => (data && data.constructor) ? data.constructor.name : 
 
 const isDefined = (data) => data !== null && data !== undefined;
 const isString = (data) => consName(data) === 'String';
-const isObject = (data) => consName(data) === 'Object';
 const isArray = (data) => consName(data) === 'Array';
+const isObject = (data) => (!isArray(data) && typeof(data) === 'object') || (consName(data) === 'Object');
 const isNumber = (data) => !!data && typeof (data) === 'number';
 const isRegex = (data) => consName(data) === 'RegExp';
 
