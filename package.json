@@ -1,0 +1,17 @@
+{
+  "name": "type-check-utility",
+  "version": "1.0.0",
+  "description": "Simple utility for type check.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "type",
+    "npm",
+    "check",
+    "javascript"
+  ],
+  "author": "Rapsy Tree",
+  "license": "ISC"
+}
