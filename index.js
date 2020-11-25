@@ -1,12 +1,12 @@
-const consName = (data) => (data && data.constructor) ? data.constructor.name : null;
-
-export const isDefined = (data) => data !== null && data !== undefined;
-export const isString = (data) => consName(data) === 'String';
-export const isArray = (data) => consName(data) === 'Array';
-export const isObject = (data) => (!isArray(data) && typeof (data) === 'object') || (consName(data) === 'Object');
-export const isNumber = (data) => !!data && typeof (data) === 'number';
-export const isRegex = (data) => consName(data) === 'RegExp';
-
-const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex };
-
-export default typeCheck;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isRegex = exports.isNumber = exports.isObject = exports.isArray = exports.isString = exports.isDefined = void 0;
+var consName = function (data) { return (data && data.constructor) ? data.constructor.name : null; };
+exports.isDefined = function (data) { return data !== null && data !== undefined; };
+exports.isString = function (data) { return consName(data) === 'String'; };
+exports.isArray = function (data) { return consName(data) === 'Array'; };
+exports.isObject = function (data) { return (!exports.isArray(data) && typeof (data) === 'object') || (consName(data) === 'Object'); };
+exports.isNumber = function (data) { return !!data && typeof (data) === 'number'; };
+exports.isRegex = function (data) { return consName(data) === 'RegExp'; };
+var typeCheck = { isDefined: exports.isDefined, isString: exports.isString, isObject: exports.isObject, isArray: exports.isArray, isNumber: exports.isNumber, isRegex: exports.isRegex };
+exports.default = typeCheck;

@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "outDir": ".",
+        "target": "es5",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "removeComments": true,
+        "declaration": true,
+        "sourceMap": false,
+        "jsx": "react",
+        "typeRoots": [
+            "index.d.ts",
+            "node_modules/@types"
+        ]
+    },
+    "include": [
+        "./*.ts",
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
