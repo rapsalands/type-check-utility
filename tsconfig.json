@@ -16,7 +16,7 @@
         "isolatedModules": true,
         "removeComments": true,
         "declaration": true,
-        "sourceMap": false,
+        "sourceMap": true,
         "jsx": "react",
         "typeRoots": [
             "index.d.ts",
