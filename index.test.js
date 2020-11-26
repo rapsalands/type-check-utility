@@ -31,7 +31,7 @@ describe('isString', function () {
     test('should return true as empty is string', function () {
         expect(_1.isString('')).toBe(true);
     });
-    test('should return false as number string is not string', function () {
+    test('should return true as number string is not string', function () {
         expect(_1.isString('2')).toBe(true);
     });
     test('should return false as number is not string', function () {
@@ -106,16 +106,16 @@ describe('isNumber', function () {
     test('should return true as 2 is number', function () {
         expect(_1.isNumber(2)).toBe(true);
     });
-    test('should return true as "2" is not number', function () {
+    test('should return false as "2" is not number', function () {
         expect(_1.isNumber('2')).toBe(false);
     });
-    test('should return true as [] is not number', function () {
+    test('should return false as [] is not number', function () {
         expect(_1.isNumber([])).toBe(false);
     });
-    test('should return true as null is not number', function () {
+    test('should return false as null is not number', function () {
         expect(_1.isNumber(null)).toBe(false);
     });
-    test('should return true as undefined is not number', function () {
+    test('should return false as undefined is not number', function () {
         expect(_1.isNumber(undefined)).toBe(false);
     });
 });
@@ -123,10 +123,10 @@ describe('isRegex', function () {
     test('should return true as "new regExp()" is not regex', function () {
         expect(_1.isRegex(new RegExp(/^/))).toBe(true);
     });
-    test('should return true as null is not regex', function () {
+    test('should return false as null is not regex', function () {
         expect(_1.isRegex(null)).toBe(false);
     });
-    test('should return true as undefined is not regex', function () {
+    test('should return false as undefined is not regex', function () {
         expect(_1.isRegex(undefined)).toBe(false);
     });
 });
