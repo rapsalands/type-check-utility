@@ -139,6 +139,10 @@ describe('isNumber', () => {
         expect(isNumber(2)).toBe(true);
     });
 
+    test('should return true as 5.97E24 is number', () => {
+        expect(isNumber(5.97E24)).toBe(true);
+    });
+
     test('should return false as "2" is not number', () => {
         expect(isNumber('2')).toBe(false);
     });
@@ -157,8 +161,12 @@ describe('isNumber', () => {
 });
 
 describe('isRegex', () => {
-    test('should return true as "new regExp()" is not regex', () => {
+    test('should return true as "new regExp()" is regex', () => {
         expect(isRegex(new RegExp(/^/))).toBe(true);
+    });
+
+    test('should return true as "/^/" is regex', () => {
+        expect(isRegex(/^/)).toBe(true);
     });
 
     test('should return false as null is not regex', () => {
