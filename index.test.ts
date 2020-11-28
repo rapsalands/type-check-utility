@@ -1,4 +1,4 @@
-import { isArray, isDefined, isNumber, isObject, isRegex, isString } from '.'
+import { isArray, isBoolean, isDefined, isNumber, isObject, isRegex, isString } from '.'
 
 describe('isDefined', () => {
     test('should return false as null is not defined', () => {
@@ -175,5 +175,43 @@ describe('isRegex', () => {
 
     test('should return false as undefined is not regex', () => {
         expect(isRegex(undefined)).toBe(false);
+    });
+});
+
+describe('isBoolean', () => {
+    test('should return true as "true" is boolean', () => {
+        expect(isBoolean(true)).toBe(true);
+    });
+
+    test('should return true as "false" is boolean', () => {
+        expect(isBoolean(false)).toBe(true);
+    });
+
+    test('should return false as 0 is not boolean', () => {
+        expect(isBoolean(0)).toBe(false);
+    });
+
+    test('should return false as "true" is not boolean', () => {
+        expect(isBoolean("true")).toBe(false);
+    });
+
+    test('should return false as "false" is not boolean', () => {
+        expect(isBoolean("false")).toBe(false);
+    });
+
+    test('should return false as null is not boolean', () => {
+        expect(isBoolean(null)).toBe(false);
+    });
+
+    test('should return false as "undefined" is not boolean', () => {
+        expect(isBoolean(undefined)).toBe(false);
+    });
+
+    test('should return false as 1 is not boolean', () => {
+        expect(isBoolean(1)).toBe(false);
+    });
+
+    test('should return false as "1" is not boolean', () => {
+        expect(isBoolean("1")).toBe(false);
     });
 });

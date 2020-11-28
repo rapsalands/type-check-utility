@@ -106,6 +106,9 @@ describe('isNumber', function () {
     test('should return true as 2 is number', function () {
         expect(_1.isNumber(2)).toBe(true);
     });
+    test('should return true as 5.97E24 is number', function () {
+        expect(_1.isNumber(5.97E24)).toBe(true);
+    });
     test('should return false as "2" is not number', function () {
         expect(_1.isNumber('2')).toBe(false);
     });
@@ -120,14 +123,46 @@ describe('isNumber', function () {
     });
 });
 describe('isRegex', function () {
-    test('should return true as "new regExp()" is not regex', function () {
+    test('should return true as "new regExp()" is regex', function () {
         expect(_1.isRegex(new RegExp(/^/))).toBe(true);
+    });
+    test('should return true as "/^/" is regex', function () {
+        expect(_1.isRegex(/^/)).toBe(true);
     });
     test('should return false as null is not regex', function () {
         expect(_1.isRegex(null)).toBe(false);
     });
     test('should return false as undefined is not regex', function () {
         expect(_1.isRegex(undefined)).toBe(false);
+    });
+});
+describe('isBoolean', function () {
+    test('should return true as "true" is boolean', function () {
+        expect(_1.isBoolean(true)).toBe(true);
+    });
+    test('should return true as "false" is boolean', function () {
+        expect(_1.isBoolean(false)).toBe(true);
+    });
+    test('should return false as 0 is not boolean', function () {
+        expect(_1.isBoolean(0)).toBe(false);
+    });
+    test('should return false as "true" is not boolean', function () {
+        expect(_1.isBoolean("true")).toBe(false);
+    });
+    test('should return false as "false" is not boolean', function () {
+        expect(_1.isBoolean("false")).toBe(false);
+    });
+    test('should return false as null is not boolean', function () {
+        expect(_1.isBoolean(null)).toBe(false);
+    });
+    test('should return false as "undefined" is not boolean', function () {
+        expect(_1.isBoolean(undefined)).toBe(false);
+    });
+    test('should return false as 1 is not boolean', function () {
+        expect(_1.isBoolean(1)).toBe(false);
+    });
+    test('should return false as "1" is not boolean', function () {
+        expect(_1.isBoolean("1")).toBe(false);
     });
 });
 //# sourceMappingURL=index.test.js.map

@@ -28,6 +28,10 @@ export const isRegex = (data) => {
     return consName(data) === 'RegExp';
 }
 
+export const isBoolean = (data) => {
+    return consName(data) === 'Boolean';
+}
+
 const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex };
 
 export default typeCheck;
