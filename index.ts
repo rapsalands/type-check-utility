@@ -32,14 +32,14 @@ export const isBoolean = (data) => {
     return consName(data) === 'Boolean';
 }
 
-export const isNotdefinedOrEmpty = (data) => {
+export const isNotDefinedOrEmpty = (data) => {
     return !isDefined(data) || data === '';
 }
 
-export const isNotdefinedOrWhiteSpace = (data) => {
+export const isNotDefinedOrWhiteSpace = (data) => {
     return !isDefined(data) || (data.trim ? data.trim() : null) === '';
 }
 
-const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex, isNotdefinedOrEmpty, isNotdefinedOrWhiteSpace };
+const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex, isNotDefinedOrEmpty, isNotDefinedOrWhiteSpace };
 
 export default typeCheck;

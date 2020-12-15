@@ -1,6 +1,9 @@
 # type-check-utility
 This is a simple type check utility for JavaScript.
 
+# Demo
+[Type-Check-Utility CodeSandBox](https://codesandbox.io/s/type-check-utility-bhz8q)
+
 # functions
 ### isDefined
 
@@ -62,7 +65,7 @@ Returns True: new RegExp(parameter), /^/
 Returns False: [], null, undefined, ""
 ```
 
-### isNotdefinedOrEmpty
+### isNotDefinedOrEmpty
 
 Checks if given parameter is of type null, undefined or '' (empty string).
 Find below some examples.
@@ -72,7 +75,7 @@ Returns True: null, undefined, ""
 Returns False: [], null, undefined, " ", 1, 123, 0, true, false
 ```
 
-### isNotdefinedOrWhiteSpace
+### isNotDefinedOrWhiteSpace
 
 Checks if given parameter is of type null, undefined, '' (empty string) or white spaces.
 Find below some examples.
