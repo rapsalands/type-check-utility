@@ -61,3 +61,23 @@ Find below some examples.
 Returns True: new RegExp(parameter), /^/
 Returns False: [], null, undefined, ""
 ```
+
+### isNotdefinedOrEmpty
+
+Checks if given parameter is of type null, undefined or '' (empty string).
+Find below some examples.
+
+```sh
+Returns True: null, undefined, ""
+Returns False: [], null, undefined, " ", 1, 123, 0, true, false
+```
+
+### isNotdefinedOrWhiteSpace
+
+Checks if given parameter is of type null, undefined, '' (empty string) or white spaces.
+Find below some examples.
+
+```sh
+Returns True: null, undefined, "", " ", "   "
+Returns False: [], null, undefined, 1, 123, 0, true, false
+```

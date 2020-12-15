@@ -1,4 +1,4 @@
-import { isArray, isBoolean, isDefined, isNumber, isObject, isRegex, isString } from '.'
+import { isArray, isBoolean, isDefined, isNotdefinedOrEmpty, isNotdefinedOrWhiteSpace, isNumber, isObject, isRegex, isString } from '.'
 
 describe('isDefined', () => {
     test('should return false as null is not defined', () => {
@@ -214,4 +214,114 @@ describe('isBoolean', () => {
     test('should return false as "1" is not boolean', () => {
         expect(isBoolean("1")).toBe(false);
     });
+});
+
+describe('isNotdefinedOrEmpty', () => {
+    test('should return true as "null" is null', () => {
+        expect(isNotdefinedOrEmpty(null)).toBe(true);
+    });
+
+    test('should return true as "undefined" is undefined', () => {
+        expect(isNotdefinedOrEmpty(undefined)).toBe(true);
+    });
+
+    test('should return true as "" is empty string', () => {
+        expect(isNotdefinedOrEmpty('')).toBe(true);
+    });
+
+    test('should return false as empty white spaces are defined', () => {
+        expect(isNotdefinedOrEmpty('    ')).toBe(false);
+    });
+
+    test('should return false as 0 is defined', () => {
+        expect(isNotdefinedOrEmpty(0)).toBe(false);
+    });
+
+    test('should return false as 1 is defined', () => {
+        expect(isNotdefinedOrEmpty(1)).toBe(false);
+    });
+
+    test('should return false as true is defined', () => {
+        expect(isNotdefinedOrEmpty(true)).toBe(false);
+    });
+
+    test('should return false as false is defined', () => {
+        expect(isNotdefinedOrEmpty(false)).toBe(false);
+    });
+
+    test('should return false as "undefined" is defined', () => {
+        expect(isNotdefinedOrEmpty("undefined")).toBe(false);
+    });
+
+    test('should return false as "null" is defined', () => {
+        expect(isNotdefinedOrEmpty("null")).toBe(false);
+    });
+
+    test('should return false as "somevalue" is defined', () => {
+        expect(isNotdefinedOrEmpty("somevalue")).toBe(false);
+    });
+
+    test('should return false as "   somevalue   " is defined', () => {
+        expect(isNotdefinedOrWhiteSpace("somevalue")).toBe(false);
+    });
+
+    test('should return false as 123 is defined', () => {
+        expect(isNotdefinedOrEmpty(123)).toBe(false);
+    });
+
+});
+
+describe('isNotdefinedOrWhiteSpace', () => {
+    test('should return true as "null" is null', () => {
+        expect(isNotdefinedOrWhiteSpace(null)).toBe(true);
+    });
+
+    test('should return true as "undefined" is undefined', () => {
+        expect(isNotdefinedOrWhiteSpace(undefined)).toBe(true);
+    });
+
+    test('should return true as "" is empty string', () => {
+        expect(isNotdefinedOrWhiteSpace('')).toBe(true);
+    });
+
+    test('should return false as empty white spaces are defined', () => {
+        expect(isNotdefinedOrWhiteSpace('    ')).toBe(true);
+    });
+
+    test('should return false as 0 is defined', () => {
+        expect(isNotdefinedOrWhiteSpace(0)).toBe(false);
+    });
+
+    test('should return false as 1 is defined', () => {
+        expect(isNotdefinedOrWhiteSpace(1)).toBe(false);
+    });
+
+    test('should return false as true is defined', () => {
+        expect(isNotdefinedOrWhiteSpace(true)).toBe(false);
+    });
+
+    test('should return false as false is defined', () => {
+        expect(isNotdefinedOrWhiteSpace(false)).toBe(false);
+    });
+
+    test('should return false as "undefined" is defined', () => {
+        expect(isNotdefinedOrWhiteSpace("undefined")).toBe(false);
+    });
+
+    test('should return false as "null" is defined', () => {
+        expect(isNotdefinedOrWhiteSpace("null")).toBe(false);
+    });
+
+    test('should return false as "somevalue" is defined', () => {
+        expect(isNotdefinedOrWhiteSpace("somevalue")).toBe(false);
+    });
+
+    test('should return false as "   somevalue   " is defined', () => {
+        expect(isNotdefinedOrWhiteSpace("somevalue")).toBe(false);
+    });
+
+    test('should return false as 123 is defined', () => {
+        expect(isNotdefinedOrWhiteSpace(123)).toBe(false);
+    });
+
 });
