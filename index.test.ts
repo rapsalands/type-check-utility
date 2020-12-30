@@ -1,4 +1,4 @@
-import { isArray, isBoolean, isDefined, isNotDefinedOrEmpty, isNotDefinedOrWhiteSpace, isNumber, isObject, isRegex, isString } from '.'
+import { isArray, isBoolean, isDefined, isNotDefinedOrEmpty, isNotDefinedOrEmptyObject, isNotDefinedOrWhiteSpace, isNumber, isObject, isRegex, isString } from '.'
 
 describe('isDefined', () => {
     test('should return false as null is not defined', () => {
@@ -216,7 +216,7 @@ describe('isBoolean', () => {
     });
 });
 
-describe('isNotdefinedOrEmpty', () => {
+describe('isNotDefinedOrEmpty', () => {
     test('should return true as "null" is null', () => {
         expect(isNotDefinedOrEmpty(null)).toBe(true);
     });
@@ -257,12 +257,12 @@ describe('isNotdefinedOrEmpty', () => {
         expect(isNotDefinedOrEmpty("null")).toBe(false);
     });
 
-    test('should return false as "somevalue" is defined', () => {
-        expect(isNotDefinedOrEmpty("somevalue")).toBe(false);
+    test('should return false as "someValue" is defined', () => {
+        expect(isNotDefinedOrEmpty("someValue")).toBe(false);
     });
 
-    test('should return false as "   somevalue   " is defined', () => {
-        expect(isNotDefinedOrWhiteSpace("somevalue")).toBe(false);
+    test('should return false as "   someValue   " is defined', () => {
+        expect(isNotDefinedOrWhiteSpace("someValue")).toBe(false);
     });
 
     test('should return false as 123 is defined', () => {
@@ -271,7 +271,7 @@ describe('isNotdefinedOrEmpty', () => {
 
 });
 
-describe('isNotdefinedOrWhiteSpace', () => {
+describe('isNotDefinedOrWhiteSpace', () => {
     test('should return true as "null" is null', () => {
         expect(isNotDefinedOrWhiteSpace(null)).toBe(true);
     });
@@ -312,16 +312,86 @@ describe('isNotdefinedOrWhiteSpace', () => {
         expect(isNotDefinedOrWhiteSpace("null")).toBe(false);
     });
 
-    test('should return false as "somevalue" is defined', () => {
-        expect(isNotDefinedOrWhiteSpace("somevalue")).toBe(false);
+    test('should return false as "someValue" is defined', () => {
+        expect(isNotDefinedOrWhiteSpace("someValue")).toBe(false);
     });
 
-    test('should return false as "   somevalue   " is defined', () => {
-        expect(isNotDefinedOrWhiteSpace("somevalue")).toBe(false);
+    test('should return false as "   someValue   " is defined', () => {
+        expect(isNotDefinedOrWhiteSpace("someValue")).toBe(false);
     });
 
     test('should return false as 123 is defined', () => {
         expect(isNotDefinedOrWhiteSpace(123)).toBe(false);
     });
 
+});
+
+describe('isNotDefinedOrEmptyObject', () => {
+    test('should return true as "null" is null', () => {
+        expect(isNotDefinedOrEmptyObject(null)).toBe(true);
+    });
+
+    test('should return true as "undefined" is undefined', () => {
+        expect(isNotDefinedOrEmptyObject(undefined)).toBe(true);
+    });
+
+    test('should return true as "" is empty string', () => {
+        expect(isNotDefinedOrEmptyObject('')).toBe(true);
+    });
+
+    test('should return false as empty white spaces are defined', () => {
+        expect(isNotDefinedOrEmptyObject('    ')).toBe(true);
+    });
+
+    test('should return false as 0 is defined', () => {
+        expect(isNotDefinedOrEmptyObject(0)).toBe(false);
+    });
+
+    test('should return false as 1 is defined', () => {
+        expect(isNotDefinedOrEmptyObject(1)).toBe(false);
+    });
+
+    test('should return false as true is defined', () => {
+        expect(isNotDefinedOrEmptyObject(true)).toBe(false);
+    });
+
+    test('should return false as false is defined', () => {
+        expect(isNotDefinedOrEmptyObject(false)).toBe(false);
+    });
+
+    test('should return false as "undefined" is defined', () => {
+        expect(isNotDefinedOrEmptyObject("undefined")).toBe(false);
+    });
+
+    test('should return false as "null" is defined', () => {
+        expect(isNotDefinedOrEmptyObject("null")).toBe(false);
+    });
+
+    test('should return false as "someValue" is defined', () => {
+        expect(isNotDefinedOrEmptyObject("someValue")).toBe(false);
+    });
+
+    test('should return false as "   someValue   " is defined', () => {
+        expect(isNotDefinedOrEmptyObject("someValue")).toBe(false);
+    });
+
+    test('should return false as 123 is defined', () => {
+        expect(isNotDefinedOrEmptyObject(123)).toBe(false);
+    });
+
+    test('should return false as {} is empty', () => {
+        expect(isNotDefinedOrEmptyObject({})).toBe(true);
+    });
+
+    test('should return false as filled {} is empty', () => {
+        expect(isNotDefinedOrEmptyObject({ some: '' })).toBe(false);
+    });
+
+    test('should return false as [] is empty', () => {
+        expect(isNotDefinedOrEmptyObject([])).toBe(true);
+    });
+
+    test('should return false as filled [] is empty', () => {
+        expect(isNotDefinedOrEmptyObject(['some'])).toBe(false);
+    });
 });

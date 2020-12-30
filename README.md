@@ -84,3 +84,13 @@ Find below some examples.
 Returns True: null, undefined, "", " ", "   "
 Returns False: [], null, undefined, 1, 123, 0, true, false
 ```
+
+### isNotDefinedOrEmptyObject
+
+Checks if given parameter is of type null, undefined, '' (empty string), white spaces, empty object or empty array.
+Find below some examples.
+
+```sh
+Returns True: null, undefined, "", " ", "   ", {}, []
+Returns False: null, undefined, 1, 123, 0, true, false
+```

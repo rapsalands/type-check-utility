@@ -40,6 +40,14 @@ export const isNotDefinedOrWhiteSpace = (data) => {
     return !isDefined(data) || (data.trim ? data.trim() : null) === '';
 }
 
-const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex, isNotDefinedOrEmpty, isNotDefinedOrWhiteSpace };
+export const isNotDefinedOrEmptyObject = (data): boolean => {
+    if (isNotDefinedOrWhiteSpace(data)) return true;
+    if (isArray(data) && data.length === 0) return true;
+    if (isObject(data) && Object.keys(data).length === 0) return true;
+
+    return false;
+}
+
+const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex, isNotDefinedOrEmpty, isNotDefinedOrWhiteSpace, isNotDefinedOrEmptyObject };
 
 export default typeCheck;

@@ -165,7 +165,7 @@ describe('isBoolean', function () {
         expect(_1.isBoolean("1")).toBe(false);
     });
 });
-describe('isNotdefinedOrEmpty', function () {
+describe('isNotDefinedOrEmpty', function () {
     test('should return true as "null" is null', function () {
         expect(_1.isNotDefinedOrEmpty(null)).toBe(true);
     });
@@ -196,17 +196,17 @@ describe('isNotdefinedOrEmpty', function () {
     test('should return false as "null" is defined', function () {
         expect(_1.isNotDefinedOrEmpty("null")).toBe(false);
     });
-    test('should return false as "somevalue" is defined', function () {
-        expect(_1.isNotDefinedOrEmpty("somevalue")).toBe(false);
+    test('should return false as "someValue" is defined', function () {
+        expect(_1.isNotDefinedOrEmpty("someValue")).toBe(false);
     });
-    test('should return false as "   somevalue   " is defined', function () {
-        expect(_1.isNotDefinedOrWhiteSpace("somevalue")).toBe(false);
+    test('should return false as "   someValue   " is defined', function () {
+        expect(_1.isNotDefinedOrWhiteSpace("someValue")).toBe(false);
     });
     test('should return false as 123 is defined', function () {
         expect(_1.isNotDefinedOrEmpty(123)).toBe(false);
     });
 });
-describe('isNotdefinedOrWhiteSpace', function () {
+describe('isNotDefinedOrWhiteSpace', function () {
     test('should return true as "null" is null', function () {
         expect(_1.isNotDefinedOrWhiteSpace(null)).toBe(true);
     });
@@ -237,14 +237,67 @@ describe('isNotdefinedOrWhiteSpace', function () {
     test('should return false as "null" is defined', function () {
         expect(_1.isNotDefinedOrWhiteSpace("null")).toBe(false);
     });
-    test('should return false as "somevalue" is defined', function () {
-        expect(_1.isNotDefinedOrWhiteSpace("somevalue")).toBe(false);
+    test('should return false as "someValue" is defined', function () {
+        expect(_1.isNotDefinedOrWhiteSpace("someValue")).toBe(false);
     });
-    test('should return false as "   somevalue   " is defined', function () {
-        expect(_1.isNotDefinedOrWhiteSpace("somevalue")).toBe(false);
+    test('should return false as "   someValue   " is defined', function () {
+        expect(_1.isNotDefinedOrWhiteSpace("someValue")).toBe(false);
     });
     test('should return false as 123 is defined', function () {
         expect(_1.isNotDefinedOrWhiteSpace(123)).toBe(false);
+    });
+});
+describe('isNotDefinedOrEmptyObject', function () {
+    test('should return true as "null" is null', function () {
+        expect(_1.isNotDefinedOrEmptyObject(null)).toBe(true);
+    });
+    test('should return true as "undefined" is undefined', function () {
+        expect(_1.isNotDefinedOrEmptyObject(undefined)).toBe(true);
+    });
+    test('should return true as "" is empty string', function () {
+        expect(_1.isNotDefinedOrEmptyObject('')).toBe(true);
+    });
+    test('should return false as empty white spaces are defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject('    ')).toBe(true);
+    });
+    test('should return false as 0 is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject(0)).toBe(false);
+    });
+    test('should return false as 1 is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject(1)).toBe(false);
+    });
+    test('should return false as true is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject(true)).toBe(false);
+    });
+    test('should return false as false is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject(false)).toBe(false);
+    });
+    test('should return false as "undefined" is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject("undefined")).toBe(false);
+    });
+    test('should return false as "null" is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject("null")).toBe(false);
+    });
+    test('should return false as "someValue" is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject("someValue")).toBe(false);
+    });
+    test('should return false as "   someValue   " is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject("someValue")).toBe(false);
+    });
+    test('should return false as 123 is defined', function () {
+        expect(_1.isNotDefinedOrEmptyObject(123)).toBe(false);
+    });
+    test('should return false as {} is empty', function () {
+        expect(_1.isNotDefinedOrEmptyObject({})).toBe(true);
+    });
+    test('should return false as filled {} is empty', function () {
+        expect(_1.isNotDefinedOrEmptyObject({ some: '' })).toBe(false);
+    });
+    test('should return false as [] is empty', function () {
+        expect(_1.isNotDefinedOrEmptyObject([])).toBe(true);
+    });
+    test('should return false as filled [] is empty', function () {
+        expect(_1.isNotDefinedOrEmptyObject(['some'])).toBe(false);
     });
 });
 //# sourceMappingURL=index.test.js.map

@@ -7,6 +7,7 @@ export declare const isRegex: (data: any) => boolean;
 export declare const isBoolean: (data: any) => boolean;
 export declare const isNotDefinedOrEmpty: (data: any) => boolean;
 export declare const isNotDefinedOrWhiteSpace: (data: any) => boolean;
+export declare const isNotDefinedOrEmptyObject: (data: any) => boolean;
 declare const typeCheck: {
     isDefined: (data: any) => boolean;
     isString: (data: any) => boolean;
@@ -16,5 +17,6 @@ declare const typeCheck: {
     isRegex: (data: any) => boolean;
     isNotDefinedOrEmpty: (data: any) => boolean;
     isNotDefinedOrWhiteSpace: (data: any) => boolean;
+    isNotDefinedOrEmptyObject: (data: any) => boolean;
 };
 export default typeCheck;
