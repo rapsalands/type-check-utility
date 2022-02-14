@@ -72,7 +72,7 @@ Find below some examples.
 
 ```sh
 Returns True: null, undefined, ""
-Returns False: [], null, undefined, " ", 1, 123, 0, true, false
+Returns False: [], " ", 1, 123, 0, true, false
 ```
 
 ### isNotDefinedOrWhiteSpace
@@ -82,7 +82,7 @@ Find below some examples.
 
 ```sh
 Returns True: null, undefined, "", " ", "   "
-Returns False: [], null, undefined, 1, 123, 0, true, false
+Returns False: [], 1, 123, 0, true, false
 ```
 
 ### isNotDefinedOrEmptyObject
@@ -92,5 +92,5 @@ Find below some examples.
 
 ```sh
 Returns True: null, undefined, "", " ", "   ", {}, []
-Returns False: null, undefined, 1, 123, 0, true, false
+Returns False: 1, 123, 0, true, false
 ```
