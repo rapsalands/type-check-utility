@@ -94,3 +94,15 @@ Find below some examples.
 Returns True: null, undefined, "", " ", "   ", {}, []
 Returns False: 1, 123, 0, true, false
 ```
+
+---
+
+## <ins>Developer Guide To Publish</ins>
+
+1. Make changes as needed.
+2. Change version in `package.json`.
+3. Run `npm login` to login in NPM account (if not logged-in already).
+4. Run `npm publish`.
+5. Shout `it's done`.
+
+---
