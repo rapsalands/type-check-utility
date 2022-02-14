@@ -1,1 +1,5 @@
 node_modules*
+index.js
+index.js.map
+index.test.js
+index.test.js.map

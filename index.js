@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isNotDefinedOrEmptyObject = exports.isNotDefinedOrWhiteSpace = exports.isNotDefinedOrEmpty = exports.isBoolean = exports.isRegex = exports.isNumber = exports.isObject = exports.isArray = exports.isString = exports.isDefined = void 0;
 var consName = function (data) {
-    if (exports.isDefined(data) && data.constructor)
+    if ((0, exports.isDefined)(data) && data.constructor)
         return data.constructor.name;
     return null;
 };
@@ -19,11 +19,11 @@ var isArray = function (data) {
 };
 exports.isArray = isArray;
 var isObject = function (data) {
-    return (!exports.isArray(data) && typeof (data) === 'object') || (consName(data) === 'Object');
+    return (!(0, exports.isArray)(data) && typeof (data) === 'object') || (consName(data) === 'Object');
 };
 exports.isObject = isObject;
 var isNumber = function (data) {
-    return exports.isDefined(data) && typeof (data) === 'number';
+    return (0, exports.isDefined)(data) && typeof (data) === 'number';
 };
 exports.isNumber = isNumber;
 var isRegex = function (data) {
@@ -35,19 +35,19 @@ var isBoolean = function (data) {
 };
 exports.isBoolean = isBoolean;
 var isNotDefinedOrEmpty = function (data) {
-    return !exports.isDefined(data) || data === '';
+    return !(0, exports.isDefined)(data) || data === '';
 };
 exports.isNotDefinedOrEmpty = isNotDefinedOrEmpty;
 var isNotDefinedOrWhiteSpace = function (data) {
-    return !exports.isDefined(data) || (data.trim ? data.trim() : null) === '';
+    return !(0, exports.isDefined)(data) || (data.trim ? data.trim() : null) === '';
 };
 exports.isNotDefinedOrWhiteSpace = isNotDefinedOrWhiteSpace;
 var isNotDefinedOrEmptyObject = function (data) {
-    if (exports.isNotDefinedOrWhiteSpace(data))
+    if ((0, exports.isNotDefinedOrWhiteSpace)(data))
         return true;
-    if (exports.isArray(data) && data.length === 0)
+    if ((0, exports.isArray)(data) && data.length === 0)
         return true;
-    if (exports.isObject(data) && Object.keys(data).length === 0)
+    if ((0, exports.isObject)(data) && Object.keys(data).length === 0)
         return true;
     return false;
 };
