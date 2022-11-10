@@ -48,6 +48,26 @@ export const isNotDefinedOrEmptyObject = (data): boolean => {
     return false;
 }
 
-const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex, isNotDefinedOrEmpty, isNotDefinedOrWhiteSpace, isNotDefinedOrEmptyObject };
+export const isReactJSXElement = (data): boolean => {
+    if (!data) return false;
+
+    if (data?.Icon?.$$typeof?.toString() === 'Symbol(react.element)') {
+        return true;
+    }
+    
+    return false;
+}
+
+export const isReactComponent = (data): boolean => {
+    if (!data) return false;
+
+    if (data?.Icon?.$$typeof?.toString() === 'Symbol(react.memo)') {
+        return true;
+    }
+    
+    return false;
+}
+
+const typeCheck = { isDefined, isString, isObject, isArray, isNumber, isRegex, isNotDefinedOrEmpty, isNotDefinedOrWhiteSpace, isNotDefinedOrEmptyObject, isReactComponent, isReactJSXElement };
 
 export default typeCheck;
