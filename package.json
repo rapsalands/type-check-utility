@@ -1,6 +1,6 @@
 {
   "name": "type-check-utility",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "description": "Simple utility for type check.",
   "main": "index.js",
   "scripts": {

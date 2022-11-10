@@ -51,7 +51,7 @@ export const isNotDefinedOrEmptyObject = (data): boolean => {
 export const isReactJSXElement = (data): boolean => {
     if (!data) return false;
 
-    if (data?.Icon?.$$typeof?.toString() === 'Symbol(react.element)') {
+    if (data?.$$typeof?.toString() === 'Symbol(react.element)') {
         return true;
     }
     
@@ -61,7 +61,7 @@ export const isReactJSXElement = (data): boolean => {
 export const isReactComponent = (data): boolean => {
     if (!data) return false;
 
-    if (data?.Icon?.$$typeof?.toString() === 'Symbol(react.memo)') {
+    if (data?.$$typeof?.toString() === 'Symbol(react.memo)') {
         return true;
     }
     
